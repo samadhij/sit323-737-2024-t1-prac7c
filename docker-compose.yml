@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    image: samadhijay/week5-nodejs-app
+    ports:
+      - '3043:3040'
+    environment:
+      - PORT=3043
+    container_name: my-app4
+    networks:
+      - my-net
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3040/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    restart: unless-stopped
+
+  app1:
+    build: .
+    image: samadhijay/week5-nodejs-app
+    ports:
+      - '3044:3040'
+    environment:
+      - PORT=3044
+    container_name: my-app3
+    networks:
+      - my-net
+
+
+networks:
+  my-net:
+    driver: bridge

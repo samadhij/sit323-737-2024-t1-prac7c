@@ -1,0 +1,14 @@
+{
+    "name": "sit737-2023-t1-prac",
+    "version": "1.0.0",
+    "description": "This is SIT737 module - Week 6 Task",
+    "main": "server_get.js",
+    "scripts": {
+        "start": "node server_get.js"
+    },
+    "author": "Samadhi Jayasinghe",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.3"
+    }
+}
